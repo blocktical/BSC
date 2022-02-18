@@ -57,5 +57,25 @@ contract secretThoughts {
         thoughtData[globalThoughtID].thought = _thought;
         emit eThoughtCreated(globalThoughtID, _thought);
     }
+    
+    // update thought 
+    // still need to update the cost part after writing the ThoughtToken SmartContract
+    function updateThought(uint256 _updateThoughtID, string memory _updatedThought) virtual public returns (string memory) {
+        require(thoughtData[_updateThoughtID].ownedBy == msg.sender , "You are not authorised to update the thought");
+        thoughtData[_updateThoughtID].thought = _updatedThought;
+        return "Thought Updated Successfully";
+    }
 
+    // upVote the thought
+    function upVoteThought(uint256 _thoughtID) virtual public {
+        thoughtData[_thoughtID].upVote += 1;
+        if(thoughtData[_thoughtID].upVote >= upVoteSpecialLimit){
+            thoughtData[_thoughtID].specialThought = true;
+        }
+    }
+
+    // downVote the thought
+    function downVoteThought(uint256 _thoughtID) virtual public {
+        thoughtData[_thoughtID].downVote += 1;
+    }
 }
