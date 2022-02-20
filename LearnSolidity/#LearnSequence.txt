@@ -3,3 +3,4 @@ File 002: SimpleOperationCalc.sol
 File 003: booleanPrimitiveDataType.sol
 File 004: intPrimitiveDataType.sol
 File 005: addressPrimitiveDataType.sol
+File 006: bytesPrimitiveDataType.sol
