@@ -22,6 +22,6 @@ contract loops {
     uint k;
     do{
       k++;
-    }while(k5< 5);
+    }while(k < 5);
   }
 }
