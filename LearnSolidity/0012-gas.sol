@@ -9,3 +9,8 @@ contract gas {
     }
   }
 }
+// gas              = unit of computation
+// gas spent        = total gas used in the transaction 
+// gas price        = ether per gas
+// gas limit        = max gas willing to be ysed for transaction to complete
+// block gas limit  = max amount of gas allowed in a block, set by the network
